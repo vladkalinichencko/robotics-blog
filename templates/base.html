@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" lang="ru" content="робототехника, блог, технологии, робот, нейросеть">
+		<meta name="keywords" lang="en" content="robotics, blog, technology, robot, neural network">
+		<title>{% block title %}  {% endblock %}</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Блог юного робототехника Главная.css') }}">
+	</head>
+	
+	<body>
+		<div id = "wrapper">
+			<div id = "header">
+				<img id = "img" src = "{{ url_for('static', filename='Блог юного робототехника.png') }}" width="100%">
+				<div><a id = "id1" class="up" href="Блог юного робототехника Главная.html">Главная</a></div>
+							<div class="menu">
+								<a id = "id2" class="up" href="#">Статьи</a>
+								<div class="submenu">
+									<a href="#" class="up1">C++/Visual C++</a>
+			       					<a href="#" class="up1">Python</a>
+			        				<a href="#" class="up1">HTML/CSS</a>
+			        				<a href="#" class="up1">JavaScript</a>
+			        				<a href="#" class="up1">Arduino и DIY</a>
+									<a href="#" class="up2">3D-прототипирование</a>
+								</div>
+							</div>
+			</div>
+			<div id = "sidebar">
+				<table wight = "100%" border="0">
+					<tr ><th align="left" id = "t1"><h3 class="white">&emsp;&emsp;Содержание:&emsp;&emsp;</h3></th></tr>
+						{% block content %}  {% endblock %}
+					</table>
+			</div>
+			<div id = "content" align="center">
+				{% block text %}  {% endblock %}
+				<form method = "post">
+					<textarea wrap="soft" rows="3" cols="70" name="comment"></textarea> <br>
+					<input class="b1 white" align="left" type="submit">
+					<input class="b1 white" align="right" type="reset">
+				</form>
+			</div>
+			<div id = "comments">
+				{% if comments|length > 0 %}
+					<div class="comment_header"><h3>Комментарии:</h3></div>
+					{% for el in comments %}
+					<a href="comment/{{ el.id }}"><div class="comment_el" align="center"><p>{{ el.comment }}</p><br><p>{{ el.date.date() }}</p></div></a>
+					{% endfor %}
+				{% else %}
+					<p>Комментариев ещё нет(</p>
+				{% endif %}
+			</div>
+			<div id = "footer">
+				<table wight = "100%" align="center">
+					<tr height="40pt" wight = "50%">
+						<th align="center" colspan="2" class="white"><h3>Контактная информация:</h3></th>
+						<th></th>
+					</tr>
+					<tr height="40pt" wight = "50%">
+						<td align="left" class="white">Телефон:</td> 
+						<td align="left" class="white">+7-928-252-68-15</td>
+					</tr>
+					<tr height="40pt" wight = "50%"><td align="left" class="white">
+						Электронная почта:</td> 
+						<td align="left" class="white">pinkod200586@gmail.com</td>
+					</tr>
+				</table>
+			</div>
+		</div>	
+	</body>
+</html>

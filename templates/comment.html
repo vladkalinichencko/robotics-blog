@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+		<meta name="keywords" lang="ru" content="робототехника, блог, технологии, робот, нейросеть">
+		<meta name="keywords" lang="en" content="robotics, blog, technology, robot, neural network">
+		<title>Комментарий</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Блог юного робототехника Главная.css') }}">
+	</head>
+<body>
+	Кто-то написал {{ comment.comment }}
+	<a href="{{ comment.id }}/delete"><div class="comment_delete">Удалить комментарий</div></a>
+	<a href="{{ comment.id }}/update"><div class="comment_delete">Редактировать комментарий</div></a>
+</body>
+</html>

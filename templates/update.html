@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+		<meta name="keywords" lang="ru" content="робототехника, блог, технологии, робот, нейросеть">
+		<meta name="keywords" lang="en" content="robotics, blog, technology, robot, neural network">
+		<title>Комментарий</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Блог юного робототехника Главная.css') }}">
+	</head>
+<body>
+	<form method = "post">
+        <textarea wrap="soft" rows="5" cols="70" name="comment">{{ comment.comment }}</textarea> <br>
+        <input class="b1 white" align="left" type="submit">
+        <input class="b1 white" align="right" type="reset">
+    </form>
+</body>
+</html>
